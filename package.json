@@ -6,9 +6,10 @@
     "packages/*"
   ],
   "scripts": {
+    "test": "turbo run test",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel --no-daemon",
-    "lint": "turbo run lint",
+    "lint": "turbo run lint && yarn run format",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {

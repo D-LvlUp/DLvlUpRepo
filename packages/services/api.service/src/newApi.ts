@@ -1,12 +1,13 @@
-import {APIService} from "./APIService";
-import {HttpClient} from "./HttpClient";
-
+import { APIService } from "./APIService";
+import { HttpClient } from "./HttpClient";
 
 export class newApi extends APIService {
+  constructor() {
+    super("https://random-data-api.com/api/v2");
 
-    constructor(Baseuri: string) {
-        super(Baseuri)
-    }
+    return this;
+  }
 
-    public getUsers = <T>(params: any) => this.instance.get<T>('/users', this.getRequest(params))
+  public getUsers = <T>(params: any) =>
+    this.instance.get<T>("/users", this.getRequest(params));
 }

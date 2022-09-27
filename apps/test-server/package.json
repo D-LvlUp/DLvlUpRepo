@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "dev": "ts-node api.ts"
+    "dev": "ts-node api.ts",
+    "lint": "eslint",
+    "test": "jest"
   },
   "license": "MIT",
   "dependencies": {
@@ -12,6 +14,9 @@
     "axios": "^0.27.2",
     "node-fetch": "^3.2.10",
     "ts-node": "^10.9.1",
-    "tsconfig": "0.0.0"
+    "@types/node": "^18.7.23",
+    "typescript": "^4.8.3",
+    "tsconfig": "*",
+    "eslint-config-custom": "*"
   }
 }

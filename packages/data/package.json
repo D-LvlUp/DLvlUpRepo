@@ -2,5 +2,13 @@
   "name": "@dlvlup/data",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.13",
+    "tsconfig": "*",
+    "typeorm": "^0.3.10"
+  },
   "license": "MIT"
 }

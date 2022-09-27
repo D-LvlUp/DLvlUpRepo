@@ -1,15 +1,15 @@
 export interface BanksResponseModel {
-    id: number
+  id: number;
 
-    uid: string
+  uid: string;
 
-    account_number: string
+  account_number: string;
 
-    iban: string
+  iban: string;
 
-    bank_name: string
+  bank_name: string;
 
-    routing_number: string
+  routing_number: string;
 
-    swift_bic: string
+  swift_bic: string;
 }

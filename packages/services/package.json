@@ -1,9 +1,13 @@
 {
   "name": "@dlvlup/services",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint"
+  },
   "dependencies": {
-    "tsconfig": "0.0.0"
+    "tsconfig": "*",
+    "eslint-config-custom": "*"
   }
 }
