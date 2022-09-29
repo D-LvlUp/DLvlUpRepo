@@ -40,12 +40,12 @@ async function Program(DB: DBContext, CLI) {
     //   return;
     // }
 
-    let hostname = "dlvlup.com";
-    let username = "thelevelupco@dlvlup.com";
-    let password = "dLVLupACE!";
+    let hostname = "smtp.office365.com";
+    let username = "thelevelupofficial@dlvlup.com";
+    let password = "";
 
     let transporter = nodemailer.createTransport({
-      host: "smtp.office365.com",
+      host: hostname,
       port: 587, // port for secure SMTP
       auth: {
         user: username,
@@ -58,8 +58,8 @@ async function Program(DB: DBContext, CLI) {
     });
 
     let info = await transporter.sendMail({
-      from: "thelevelupco@dlvlup.com",
-      to: "rafaelcv7@outlook.com",
+      from: username,
+      to: "7874386216@txt.att.net",
       subject: "Message from Node",
       text: "Te imaginas que esto funcione?",
       html: "<h1>Hola otro Mundo!?</h1>",
