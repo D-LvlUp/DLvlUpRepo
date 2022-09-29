@@ -6,6 +6,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@dlvlup/core": "1.0.0",
+    "mssql": "^9.0.1",
+    "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
     "tsconfig": "*",
     "typeorm": "^0.3.10"
