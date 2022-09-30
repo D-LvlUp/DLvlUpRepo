@@ -3,7 +3,7 @@
   "host": "portgas.mysql.database.azure.com",
   "port": 3306,
   "username": "portgas",
-  "password": "****",
+  "password": "***",
   "database": "test",
   "ssl": {},
   "entities": [],

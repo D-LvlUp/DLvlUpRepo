@@ -1,5 +1,4 @@
 import { APIService } from "./APIService";
-import { HttpClient } from "./HttpClient";
 
 export class newApi extends APIService {
   constructor() {

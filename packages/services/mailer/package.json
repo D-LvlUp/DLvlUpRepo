@@ -1,0 +1,13 @@
+{
+  "name": "mailer",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "dependencies": {
+    "@types/nodemailer": "^6.4.6",
+    "nodemailer": "^6.8.0",
+    "@dlvlup/core": "1.0.0",
+    "eslint-config-custom": "*",
+    "tsconfig": "*"
+  }
+}
