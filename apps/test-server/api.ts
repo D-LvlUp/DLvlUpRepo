@@ -1,7 +1,7 @@
 import { checkInternetConnection } from "@dlvlup/core";
 import "reflect-metadata";
 import { DBContext } from "@dlvlup/data/src/DBContext";
-import { MailerService } from "@dlvlup/services/mailer"
+import {MailerService, Subscription} from "@dlvlup/services/mailer"
 import {
   setupDB,
   setCli,
@@ -28,34 +28,36 @@ async function Program(DB: DBContext, CLI) {
 
     const mailerConfig = require("./config/mailer.json")
 
-    const Mailer = new MailerService(mailerConfig, " D'LvlUp Official")
+    const Mailer = new MailerService(mailerConfig, "D'LvlUp Official")
 
-    consola.info(Mailer.SubscriptionsList.add("Test"))
-    console.log(Mailer.SubscriptionsList.getSubscription("Test").add([{
-      address: "7874386216@txt.att.net",
-      name: 'RAFAEL',
-    },
-      {
-        address: "7876313373@messaging.sprintpcs.com",
-        name: 'RAFAEL',
-      }]))
+    Mailer.SubscriptionsList
+        .addSubscription("NeflixViewers")
+        .addSubscribers(
+            [
+              {
+                address: "78746@txt.att.net",
+                name: 'RAFAEL',
+              },
+              {
+                address: "787633@messaging.sprintpcs.com",
+                name: 'Nyrelis',
+              }
+            ]
+        );
 
-
-
-
-    const info = await Mailer.sendMailToSubscribers(
-        "Test",
-        "Un mensajito de Amor",
-        "Hola, ya que esto funcionó aprovecho para decirte que te Amo mucho!"
-    )
-    // const info = await Mailer.sendMail({
-    //   to: "7874386216@txt.att.net",
-    //   subject: "Message from Node",
-    //   text: "Te imaginas que esto funcione?",
-    // });
+    console.log(Mailer.SubscriptionsList.getSubscription("Test"))
 
 
 
-    consola.success(`Message Sent: ${info.response}`);
+
+    // const info = await Mailer.sendMailToSubscribers(
+    //     "Test",
+    //     "Un mensajito de Amor",
+    //     "Hola, ya que esto funcionó aprovecho para decirte que te Amo mucho!"
+    // )
+
+
+
+    // consola.success(`Message Sent: ${info.response}`);
   }
 }

@@ -8,13 +8,16 @@ export class Subscriptions {
         return this._allSubs;
     }
 
+    addSubscription(name: string) : Subscription {
+        return this._allSubs[name] = new Subscription()
+    }
+
     getSubscription(name: string): Subscription {
         return this._allSubs[name]
     }
 
-    add(name: string, subscribers?: subscriber[]) : Subscriptions {
-        this._allSubs[name] = new Subscription(subscribers)
-        return this
+    removeSubscription(name: string): boolean {
+        return (this._allSubs[name]) ? delete this._allSubs[name] : false
     }
 
     getSubscriptionsTaggedAs(tags: string[]) {
@@ -23,13 +26,8 @@ export class Subscriptions {
 }
 
 export class Subscription {
-    constructor(user: subscriber[]) {
-        if(user) {
-            this._subs.push(...user)
-        }
-    }
 
-    private _subs: subscriber[] = []
+    private _subs: Subscriber[] = []
 
     tags: string[]
 
@@ -37,19 +35,36 @@ export class Subscription {
         return this._subs
     }
 
-    add(subscribers: subscriber[]): boolean {
+    addSubscribers(subscribers: Subscriber[]): boolean {
         this._subs.push(...subscribers)
         return true
     }
 
-    remove(email: string): boolean {
+    unsubscribe(email: string): boolean {
         this._subs.filter(subs => subs.address = email).pop()
         return true
     }
 }
 
-export interface subscriber extends Address {
-    name: string,
-    address: string,
-    tags?: string[]
+export class Subscriber implements ISubscriber {
+
+    address: string;
+
+    name: string;
+
+    changeEmail(newEmail: string): Subscriber {
+        this.address = newEmail;
+        return this
+    }
+
+}
+
+interface ISubscriber extends Address {
+
+    address: string;
+
+    name: string;
+
+    changeEmail(newEmail: string): Subscriber
+
 }
