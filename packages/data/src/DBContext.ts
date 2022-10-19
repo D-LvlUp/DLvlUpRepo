@@ -19,7 +19,7 @@ export class DBContext implements IDBContext {
   private _db: DataSource;
 
   dbIsConnected(): boolean {
-    return this.DB.isInitialized;
+    return this.DBSource.isInitialized;
   }
 
   async start(): Promise<DBContext> {
@@ -31,7 +31,7 @@ export class DBContext implements IDBContext {
     await this._db.destroy();
   }
 
-  get DB(): DataSource {
+  get DBSource(): DataSource {
     return this._db;
   }
 

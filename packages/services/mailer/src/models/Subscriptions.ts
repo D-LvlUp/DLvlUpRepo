@@ -52,7 +52,7 @@ export class Subscriber implements ISubscriber {
 
     name: string;
 
-    changeEmail(newEmail: string): Subscriber {
+    changeEmail?(newEmail: string): Subscriber {
         this.address = newEmail;
         return this
     }
@@ -65,6 +65,6 @@ interface ISubscriber extends Address {
 
     name: string;
 
-    changeEmail(newEmail: string): Subscriber
+    changeEmail?(newEmail: string): Subscriber
 
 }

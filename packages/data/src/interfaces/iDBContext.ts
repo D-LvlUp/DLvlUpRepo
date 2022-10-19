@@ -6,7 +6,7 @@ export interface IDBContext {
 
   start(): Promise<DBContext>;
 
-  get DB(): DataSource;
+  get DBSource(): DataSource;
 
   set DB(src: DataSource);
 }

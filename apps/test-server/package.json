@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "dev": "ts-node api.ts",
+    "dev": "ts-node QoDProgram.ts",
     "lint": "eslint",
     "test": "jest"
   },

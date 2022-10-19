@@ -61,7 +61,7 @@ export class APIService extends HttpClient {
     return this;
   }
 
-  public getRequest<T>(params: T): any {
+  protected getRequest<T>(params: T): any {
     this.setMethod("GET");
     return {
       headers: this._headers,
@@ -70,7 +70,7 @@ export class APIService extends HttpClient {
     };
   }
 
-  public postRequest<T>(body: T): any {
+  protected postRequest<T>(body: T): any {
     this.setMethod("POST");
     return {
       headers: this._headers,
@@ -80,7 +80,7 @@ export class APIService extends HttpClient {
     };
   }
 
-  public get = <T>(endpoint: string, params: any) =>
+  public get = <T>(endpoint: string, params?: any) =>
     this.instance.get<T>(endpoint, this.getRequest<T>(params));
 
   public post = <T>(endpoint: string, body: any) =>

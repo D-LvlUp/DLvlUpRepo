@@ -1,12 +1,8 @@
-//TODO send to subs with tag x.
-//TODO load subscribers from json.
-//TODO clean code of MailerService
 import SMTPTransport from "nodemailer/lib/smtp-transport";
 import {Transporter} from "nodemailer";
 import {ultraMap} from "@dlvlup/core";
-import {MailOptions} from "./models/MailOptions";
+import {MailOptions, Subscription, Subscriptions} from "./models";
 import {Address} from "nodemailer/lib/mailer";
-import {Subscription, Subscriptions} from "./models/Subscriptions";
 
 const nodemailer = require("nodemailer")
 
@@ -38,12 +34,15 @@ export class MailerService {
 
     async sendMailToSubscribers(subscription: string, subject: string, text: string) {
         const sub: Subscription = this._subscriptionsList.allSubscriptions[subscription]
-        return await this._mailer.sendMail({
-            from: this.sender,
-            to: sub.Subscribers,
-            subject: subject,
-            text: text
-        })
+        if (sub != undefined) {
+            return await this._mailer.sendMail({
+                from: this.sender,
+                to: sub.Subscribers,
+                subject: subject,
+                text: text
+            })
+        }
+        throw Error(`Subscription "${subscription}" not found in List of Subscriptions.`)
     }
 
 
