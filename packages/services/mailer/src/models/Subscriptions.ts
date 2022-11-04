@@ -1,70 +1,64 @@
-import {Address} from "nodemailer/lib/mailer";
+import { Address } from "nodemailer/lib/mailer";
 
 export class Subscriptions {
+  private _allSubs: { [key: string]: Subscription } = {};
 
-    private _allSubs: {[key: string]: Subscription} = {};
+  get allSubscriptions() {
+    return this._allSubs;
+  }
 
-    get allSubscriptions() {
-        return this._allSubs;
-    }
+  addSubscription(name: string): Subscription {
+    return (this._allSubs[name] = new Subscription());
+  }
 
-    addSubscription(name: string) : Subscription {
-        return this._allSubs[name] = new Subscription()
-    }
+  getSubscription(name: string): Subscription {
+    return this._allSubs[name];
+  }
 
-    getSubscription(name: string): Subscription {
-        return this._allSubs[name]
-    }
+  removeSubscription(name: string): boolean {
+    return this._allSubs[name] ? delete this._allSubs[name] : false;
+  }
 
-    removeSubscription(name: string): boolean {
-        return (this._allSubs[name]) ? delete this._allSubs[name] : false
-    }
-
-    getSubscriptionsTaggedAs(tags: string[]) {
-        throw new Error('Function not implemented')
-    }
+  getSubscriptionsTaggedAs(tags: string[]) {
+    throw new Error("Function not implemented");
+  }
 }
 
 export class Subscription {
+  private _subs: Subscriber[] = [];
 
-    private _subs: Subscriber[] = []
+  tags: string[];
 
-    tags: string[]
+  get Subscribers() {
+    return this._subs;
+  }
 
-    get Subscribers() {
-        return this._subs
-    }
+  addSubscribers(subscribers: Subscriber[]): boolean {
+    this._subs.push(...subscribers);
+    return true;
+  }
 
-    addSubscribers(subscribers: Subscriber[]): boolean {
-        this._subs.push(...subscribers)
-        return true
-    }
-
-    unsubscribe(email: string): boolean {
-        this._subs.filter(subs => subs.address = email).pop()
-        return true
-    }
+  unsubscribe(email: string): boolean {
+    this._subs.filter((subs) => (subs.address = email)).pop();
+    return true;
+  }
 }
 
 export class Subscriber implements ISubscriber {
+  address: string;
 
-    address: string;
+  name: string;
 
-    name: string;
-
-    changeEmail?(newEmail: string): Subscriber {
-        this.address = newEmail;
-        return this
-    }
-
+  changeEmail?(newEmail: string): Subscriber {
+    this.address = newEmail;
+    return this;
+  }
 }
 
 interface ISubscriber extends Address {
+  address: string;
 
-    address: string;
+  name: string;
 
-    name: string;
-
-    changeEmail?(newEmail: string): Subscriber
-
+  changeEmail?(newEmail: string): Subscriber;
 }

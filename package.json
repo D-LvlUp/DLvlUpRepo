@@ -9,7 +9,7 @@
     "test": "turbo run test",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint && yarn run format",
+    "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
