@@ -5,7 +5,7 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
-  "parserOptions": { "project": ["./tsconfig.json"] },
+  "parserOptions": { "project": ["../tsconfig/base.json"] },
   "plugins": [
     "@typescript-eslint"
   ],

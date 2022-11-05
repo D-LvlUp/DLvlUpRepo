@@ -9,12 +9,16 @@
     "test": "turbo run test",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint && yarn run format",
+    "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@types/jest": "^29.2.2",
     "eslint-config-custom": "*",
+    "jest": "^29.2.2",
+    "node-notifier": "^10.0.1",
     "prettier": "latest",
+    "ts-jest": "^29.0.3",
     "turbo": "latest"
   },
   "engines": {
