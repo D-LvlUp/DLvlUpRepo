@@ -27,24 +27,41 @@ export class Subscriptions {
 export class Subscription {
   private _subs: Subscriber[] = [];
 
-  tags: string[];
+  private _tags: string[] = [];
 
   get Subscribers() {
     return this._subs;
   }
 
+  get tags() {
+    return this._tags;
+  }
+
   addSubscribers(subscribers: Subscriber[]): boolean {
-    this._subs.push(...subscribers);
+    subscribers.forEach(x => this._subs.push(new Subscriber(x)))
     return true;
   }
 
   unsubscribe(email: string): boolean {
-    this._subs.filter((subs) => (subs.address = email)).pop();
+    this._subs.splice(this._subs.findIndex(x => x.address == email));
+    return true;
+  }
+
+  addTag(tag: string): void {
+    this._tags.push(tag);
+  }
+
+  removeTag(tag: string): boolean {
+    this._tags.splice(this._tags.indexOf(tag))
     return true;
   }
 }
 
 export class Subscriber implements ISubscriber {
+  constructor (info: Subscriber) {
+    Object.assign(this, info)
+  }
+
   address: string;
 
   name: string;
