@@ -1,3 +1,3 @@
-export * from "./src/MailerService";
+export * from './src/MailerService';
 
-export * from "./src/models";
+export * from './src/models';

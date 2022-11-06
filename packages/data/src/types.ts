@@ -1,5 +1,5 @@
 export type MySqlOptions = {
-  type: "mysql";
+  type: 'mysql';
   host: string;
   port: number;
   username: string;

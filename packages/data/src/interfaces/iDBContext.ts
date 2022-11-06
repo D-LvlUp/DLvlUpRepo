@@ -1,5 +1,5 @@
-import { DataSource } from "typeorm";
-import { DBContext } from "../DBContext";
+import { DataSource } from 'typeorm';
+import { DBContext } from '../DBContext';
 
 export interface IDBContext {
   dbIsConnected(): boolean;

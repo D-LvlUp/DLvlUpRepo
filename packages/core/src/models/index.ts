@@ -1,3 +1,3 @@
-export * from "./banksResponseModel";
+export * from './banksResponseModel';
 
-export * from "./BanksAppModel";
+export * from './BanksAppModel';

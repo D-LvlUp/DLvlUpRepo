@@ -1,1 +1,1 @@
-export * from "./QoDApi";
+export * from './QoDApi';
