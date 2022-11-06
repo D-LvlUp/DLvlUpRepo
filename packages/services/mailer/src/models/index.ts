@@ -1,3 +1,3 @@
-export * from "./MailOptions";
+export * from './MailOptions';
 
-export * from "./Subscriptions";
+export * from './Subscriptions';

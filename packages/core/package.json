@@ -4,7 +4,7 @@
   "main": "index.ts",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint"
+    "lint": "eslint './**' --fix"
   },
   "dependencies": {
     "class-transformer": "^0.5.1",

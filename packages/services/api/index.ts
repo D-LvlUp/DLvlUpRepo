@@ -1,3 +1,3 @@
-export * from "./src/APIService";
+export * from './src/APIService';
 
-export * from "./src/endpoints";
+export * from './src/endpoints';

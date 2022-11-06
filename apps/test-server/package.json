@@ -4,7 +4,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "ts-node QoDProgram.ts",
-    "lint": "eslint"
+    "lint": "eslint './**' --fix"
   },
   "license": "MIT",
   "dependencies": {

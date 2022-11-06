@@ -1,1 +1,1 @@
-export * from "./ultraMap";
+export * from './ultraMap';

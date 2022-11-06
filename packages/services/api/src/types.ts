@@ -3,7 +3,7 @@ export type KeyValue<T, U> = {
   value: U;
 };
 
-export type ApiMethod = "POST" | "GET";
+export type ApiMethod = 'POST' | 'GET';
 
 export type Header = {
   [key: string]: any;
