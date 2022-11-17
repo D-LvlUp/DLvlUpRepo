@@ -5,8 +5,7 @@ import fs from 'fs';
 import path from 'path';
 
 export class DBContext implements IDBContext {
-	//TODO function for differents configs.
-	constructor(Config: MySqlOptions, Entities: [any]) {
+	constructor(Config: MySqlOptions, Entities: any[]) {
 		Config.ssl = {
 			ca: fs.readFileSync(path.join(__dirname, 'DigiCertGlobalRootCA.crt.pem')),
 		};

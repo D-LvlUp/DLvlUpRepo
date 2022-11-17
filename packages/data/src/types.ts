@@ -6,7 +6,7 @@ export type MySqlOptions = {
   password: string;
   database: string;
   ssl: object;
-  entities: [string];
+  entities: any[];
   synchronize: boolean;
   logging: boolean;
 };

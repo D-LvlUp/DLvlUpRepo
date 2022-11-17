@@ -1,4 +1,4 @@
-export * from './src/base';
+export * from './src/common';
 
 export * from './src/models';
 
