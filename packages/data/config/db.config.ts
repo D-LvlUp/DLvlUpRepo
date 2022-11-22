@@ -11,7 +11,7 @@ class MysqlConfig {
 
     readonly username = 'portgas'
 
-    readonly password = 'dLVLupLUFFY!'
+    readonly password = '***'
 
     readonly database = 'test'
 
@@ -33,7 +33,7 @@ class MsSqlConfig {
 
     readonly user = 'rcedeno'
 
-    readonly password = 'dLVLupLUFFY!'
+    readonly password = '***'
 
     extra = {
         trustedConnection: true,
