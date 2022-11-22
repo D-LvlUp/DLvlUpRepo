@@ -1,6 +1,6 @@
 import { BaseRepository } from '../repository/BaseRepository';
 import { DBEntities } from '../entities/EntityHolder';
-const config = require('../../config/db.json');
+import DbConfig from "../../config/db.config";
 
 
 export abstract class DBService<T> {
@@ -8,7 +8,7 @@ export abstract class DBService<T> {
 
 	public _entities = DBEntities;
 
-	public _config = config;
+	public _config = DbConfig.Mysql;
 
 	public Repository: BaseRepository<T>;
 

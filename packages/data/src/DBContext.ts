@@ -1,14 +1,8 @@
 import { IDBContext } from './interfaces/iDBContext';
 import { DataSource } from 'typeorm';
-import { MySqlOptions } from './types';
-import fs from 'fs';
-import path from 'path';
 
 export class DBContext implements IDBContext {
-	constructor(Config: MySqlOptions, Entities: any[]) {
-		Config.ssl = {
-			ca: fs.readFileSync(path.join(__dirname, 'DigiCertGlobalRootCA.crt.pem')),
-		};
+	constructor(Config, Entities: any[]) {
 		Config.entities.push(...Entities);
 		this._src = new DataSource(Config);
 	}
