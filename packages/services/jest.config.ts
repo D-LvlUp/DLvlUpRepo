@@ -2,5 +2,5 @@
 const sharedConfig = require('../../jest.config');
 module.exports = {
 	...sharedConfig,
-	coveragePathIgnorePatterns: ['MailOptions.ts','index.ts']
+	coveragePathIgnorePatterns: ['MailOptions.ts','app.ts']
 };
