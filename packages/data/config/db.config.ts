@@ -1,5 +1,7 @@
 import fs from "fs";
 import path from "path";
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 
 class MysqlConfig {
@@ -11,7 +13,7 @@ class MysqlConfig {
 
     readonly username = 'portgas'
 
-    readonly password = '***'
+    readonly password = process.env.DB_PASS
 
     readonly database = 'test'
 

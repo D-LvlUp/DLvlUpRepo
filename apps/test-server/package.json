@@ -8,9 +8,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@dlvlup/core": "1.0.0",
-    "@dlvlup/data": "1.0.0",
-    "@dlvlup/services": "1.0.0",
+    "@dlvlup01/core": "1.0.0",
+    "@dlvlup01/data": "1.0.0",
+    "@dlvlup01/services": "1.0.0",
     "@types/node": "^18.7.23",
     "@types/nodemailer": "^6.4.6",
     "axios": "^1.1.3",

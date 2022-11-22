@@ -1,6 +1,6 @@
-import { BaseRepository } from '../repository/BaseRepository';
+import { BaseRepository } from '../repository';
 import { DBEntities } from '../entities/EntityHolder';
-import DbConfig from "../../config/db.config";
+import DbConfig from '../../config/db.config';
 
 
 export abstract class DBService<T> {
