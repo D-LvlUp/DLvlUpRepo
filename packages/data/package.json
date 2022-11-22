@@ -1,12 +1,12 @@
 {
-  "name": "@dlvlup/data",
-  "version": "1.0.0",
+  "name": "@dlvlup01/data",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "lint": "eslint './**' --fix"
   },
   "dependencies": {
-    "@dlvlup/core": "1.0.0",
+    "@dlvlup01/core": "1.0.0",
     "mssql": "^9.0.1",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
